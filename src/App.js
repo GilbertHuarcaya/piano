@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import "./styles.css";
 
 function App() {
-  // used useEffect to 
+  // used useEffect to find every a and add an EventListener onclick corresponding a index with respective audio number
   useEffect(() => {
     const keys = document.querySelectorAll("a");
     keys.forEach((key, index) => {
-      key.addEventListener("click", (key) => {
-        key.preventDefault();
+      key.addEventListener("click", (event) => {
+        event.preventDefault();
         new Audio(`./audio/key-${index + 1}.mp3`).play();
       });
     });
